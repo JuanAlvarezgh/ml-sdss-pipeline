@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python:3.11-slim'
+            args '--user root'
+        }
+    }
 
     stages {
 
@@ -13,10 +18,8 @@ pipeline {
         stage('Instalar dependencias') {
             steps {
                 echo 'Instalando librerias Python...'
-                sh '''
-                    pip install -r requirements.txt
-                    pip install pytest
-                '''
+                sh 'pip install -r requirements.txt'
+                sh 'pip install pytest'
             }
         }
 
