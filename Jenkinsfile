@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.11-slim'
-            args '--user root'
-        }
-    }
+    agent any
 
     stages {
 
@@ -18,22 +13,25 @@ pipeline {
         stage('Instalar dependencias') {
             steps {
                 echo 'Instalando librerias Python...'
-                sh 'pip install -r requirements.txt'
-                sh 'pip install pytest'
+                sh '''
+                    python3 -m pip install --upgrade pip
+                    python3 -m pip install -r requirements.txt
+                    python3 -m pip install pytest
+                '''
             }
         }
 
         stage('Pruebas del dataset') {
             steps {
                 echo 'Corriendo pruebas...'
-                sh 'python -m pytest tests/test_dataset.py -v'
+                sh 'python3 -m pytest tests/test_dataset.py -v'
             }
         }
 
         stage('Ejecutar pipeline ML') {
             steps {
                 echo 'Ejecutando el pipeline ML...'
-                sh 'python main.py'
+                sh 'python3 main.py'
             }
         }
 
