@@ -1,0 +1,13 @@
+{
+    "modelo": "Regresi\u00f3n Lineal",
+    "variable_objetivo": "redshift",
+    "features": [
+        "u",
+        "g",
+        "r",
+        "i",
+        "z"
+    ],
+    "MSE": 0.2985,
+    "R2": 0.5153
+}

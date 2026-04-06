@@ -1,0 +1,17 @@
+{
+    "modelo": "KMeans",
+    "n_clusters": 3,
+    "inertia": 544.72,
+    "features": [
+        "u",
+        "g",
+        "r",
+        "i",
+        "z"
+    ],
+    "distribucion_clusters": {
+        "0": 352,
+        "1": 350,
+        "2": 298
+    }
+}

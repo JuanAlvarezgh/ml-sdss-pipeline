@@ -1,0 +1,28 @@
+{
+    "modelo": "KNN",
+    "k": 5,
+    "division": "70/30",
+    "accuracy": 0.9967,
+    "matriz_confusion": [
+        [
+            98,
+            0,
+            0
+        ],
+        [
+            1,
+            86,
+            0
+        ],
+        [
+            0,
+            0,
+            115
+        ]
+    ],
+    "clases": [
+        "Galaxy",
+        "QSO",
+        "Star"
+    ]
+}
