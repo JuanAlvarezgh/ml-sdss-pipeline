@@ -14,9 +14,9 @@ pipeline {
             steps {
                 echo 'Instalando librerias Python...'
                 sh '''
-                    python3 -m pip install --upgrade pip
-                    python3 -m pip install -r requirements.txt
-                    python3 -m pip install pytest
+                    python3 -m pip install --break-system-packages --upgrade pip
+                    python3 -m pip install --break-system-packages -r requirements.txt
+                    python3 -m pip install --break-system-packages pytest
                 '''
             }
         }
